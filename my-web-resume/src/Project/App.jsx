@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import './App.css'
-import ins from './picture/instagram.png'
-import github from './picture/github.png'
+import ins from '../picture/instagram.png'
+import github from '../picture/github.png'
 
-function App() {
+export default function AboutApp() {
   return (
     <div className="app-root">
       <header className="site-header">
@@ -12,10 +12,10 @@ function App() {
 
           <nav className="site-nav" aria-label="Main navigation">
             <ul>
-              <li><a href="#about">About Me</a></li>
-              <li><a href="#resume">Resume</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><Link to="/about">About Me</Link></li>
+              <li><Link to="/resume">Resume</Link></li>
+              <li><Link to="/projects">Projects</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
             </ul>
           </nav>
         </div>
@@ -23,8 +23,8 @@ function App() {
 
       <main className="site-main">
         <div className="main-inner">
-          <h2>Vite + React</h2>
-          <p>在這裡放你的履歷內容或元件 </p>
+          <h2>Project</h2>
+          <p>在這裡放你的專案細節（Project 1 / Project 2 / Project 3）</p>
         </div>
       </main>
 
@@ -47,10 +47,10 @@ function App() {
               <li>
                 <p className="footer-label">Social</p>
                 <div className="social-links">
-                  <a href="https://www.instagram.com/sheep_01_09/">
+                  <a href="https://www.instagram.com/sheep_01_09/" target="_blank" rel="noopener noreferrer">
                     <img src={ins} alt="Instagram" className="social-icon" />
                   </a>
-                  <a href="https://github.com/shshsheep">
+                  <a href="https://github.com/shshsheep" target="_blank" rel="noopener noreferrer">
                     <img src={github} alt="GitHub" className="social-icon" />
                   </a>
                 </div>
@@ -62,5 +62,3 @@ function App() {
     </div>
   )
 }
-
-export default App
