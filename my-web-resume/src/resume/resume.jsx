@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom'
-import './App.css'
+import './resume.css'
 import ins from '../picture/instagram.png'
 import github from '../picture/github.png'
 
-export default function AboutApp() {
+export default function ResumeApp() {
   return (
-    <div className="app-root">
+    <div className="resume-page">
       <header className="site-header">
         <div className="header-inner flush">
-          <h2 className="site-title">Jay's Resume</h2>
+          <h2 className="site-title">Jay Yang <span className="px-1.5 text-[0.95rem]">/ Computer Science Enthusiast</span> </h2>
 
           <nav className="site-nav" aria-label="Main navigation">
             <ul>
@@ -23,8 +23,8 @@ export default function AboutApp() {
 
       <main className="site-main">
         <div className="main-inner">
-          <h2>About Me</h2>
-          <p>這裡放你的自我介紹內容。</p>
+          <h2>Resume</h2>
+          <p>在這裡放你的履歷細節（Experience / Education / Skills）</p>
         </div>
       </main>
 

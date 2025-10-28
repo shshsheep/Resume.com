@@ -1,70 +1,205 @@
 @import "tailwindcss";
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  
+  background-color: #d6c2c2;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --color-header: #202225; /* header 背景色 */
+  --color-footer: #202225; /* footer 背景色 */
+  --text-on-dark: #ffffff; /* header&footer 文字顏色 */
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+/* 固定頂/底部的輔助類別（選用） */
+.site-header.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
-a:hover {
-  color: #535bf2;
+.site-footer.fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.site-main.with-fixed {
+  /* 若啟用 fixed，調整 padding-top/bottom 為 header/footer 實際高度 */
+  padding-top: 72px;
+  padding-bottom: 56px;
 }
 
-body {
-  margin: 0;
+/* ---------------------------
+   Header
+   --------------------------- */
+.site-header {
+  background: var(--color-header) !important;
+  color: var(--text-on-dark);
+  padding: 1rem 0;
+  width: 100vw;
+  position: relative;
+  left: calc(50% - 50vw);
+  box-sizing: border-box;
+}
+
+
+/* header-inner：標題靠左、導覽靠右；響應式內距 */
+.header-inner {
+  width: 100vw;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(1rem, 3vw, 2rem);
+  gap: 1rem;
+  box-sizing: border-box;
+  position: relative;
+  left: calc(50% - 50vw);
+}
+.header-inner.flush {
+  padding: 0 clamp(0.5rem, 2vw, 1.25rem);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.site-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 900;
+  text-align: left;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+/* header 導覽 */
+.site-nav {
+  margin: 0;
+  padding: 0;
 }
-button:hover {
-  border-color: #646cff;
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.site-nav a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+.site-nav a:hover,
+.site-nav a:focus {
+  background: rgba(255, 255, 255, 0.06);
+  outline: none;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* ---------------------------
+    Footer
+   --------------------------- */
+.site-footer {
+  background: var(--color-footer) !important;
+  color: var(--text-on-dark);
+  padding: 0.75rem 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  width: 100vw;
+  position: relative;
+  left: calc(50% - 50vw);
+  box-sizing: border-box;
+}
+
+.footer-inner {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(1rem, 3vw, 2rem);
+  gap: 1rem;
+  box-sizing: border-box;
+  position: relative;
+  left: calc(50% - 50vw);
+  color: var(--text-on-dark);
+}
+
+.footer-left p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* footer 右側項目：橫向排列三個欄位，內部置中 */
+.footer-right ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem;            /* 欄位間距，可調整 */
+  align-items: flex-start; /* 讓欄位頂端對齊（改成 center 若要中線對齊） */
+}
+
+/* 每個欄位內部為垂直排列：label 在上，內容在下，置中 */
+.footer-right li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  min-width: 120px; /* 可選，確保每欄有相近寬度 */
+}
+
+/* 標籤與內容樣式 */
+.footer-label {
+  margin: 0;
+  font-size: 0.85rem;
+}
+.footer-value {
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+/* Social 圖示橫向排列與大小 */
+.social-links {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.social-icon {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+/* 小螢幕下的響應式調整 */
+@media (max-width: 640px) {
+  .header-inner {
+    justify-content: space-between;
   }
-  a:hover {
-    color: #747bff;
+  .site-nav ul {
+    gap: 0.5rem;
   }
-  button {
-    background-color: #f9f9f9;
+  .site-nav a {
+    font-size: 0.9rem;
+    padding: 0.2rem 0.4rem;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  .footer-right ul {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+  }
+  .footer-right li {
+    min-width: auto;
+  }
+
+  .main-inner {
+    margin: 0 0.75rem;
+    padding: 0.75rem;
   }
 }
+
+
+

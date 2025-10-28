@@ -1,0 +1,41 @@
+/* 重設：移除瀏覽器預設間距並確保 root 滿高 */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+/* 基本整體排版 */
+.resume-page {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.resume-page .site-main{
+  background: #e9caa1;
+}
+
+/* ---------------------------
+   Main (還原樣式)
+   --------------------------- */
+.resume-page .site-main {
+  flex: 1; /* 撐滿中間區域，讓 footer 能貼到底部 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+  width: 100vw;
+  position: relative;
+  left: 0;
+  box-sizing: border-box;
+}
+
+
+.resume-page .main-inner {
+  max-width: 900px; /* 可以調整為 880px 以收窄 */
+  width: 100%;
+  margin: 0 1rem;
+  background: #f17979;
+  padding: 1rem;
+  box-sizing: border-box;
+}

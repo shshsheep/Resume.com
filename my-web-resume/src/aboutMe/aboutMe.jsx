@@ -1,15 +1,16 @@
 import { Link } from 'react-router-dom'
-import './App.css'
+import './aboutMe.css'
 import ins from '../picture/instagram.png'
 import github from '../picture/github.png'
+import duck from '../picture/duck.png'
 
 export default function AboutApp() {
   return (
-    <div className="app-root">
+    <div className="about-page">
       <header className="site-header">
         <div className="header-inner flush">
-          <h2 className="site-title">Jay's Resume</h2>
-
+          <h2 className="site-title">Jay Yang <span className="px-1.5 text-[0.95rem]">/ Computer Science Enthusiast</span> </h2>
+                    
           <nav className="site-nav" aria-label="Main navigation">
             <ul>
               <li><Link to="/about">About Me</Link></li>
@@ -23,8 +24,42 @@ export default function AboutApp() {
 
       <main className="site-main">
         <div className="main-inner">
-          <h2>Contact</h2>
-          <p>這裡放你的聯絡資訊。</p>
+            {/* 左邊卡片 */}
+            <div className="profile-card">  
+
+              <img src={duck} alt="Profile" className="profile-image" />
+
+              <h2 className="name">Jay Yang</h2>
+              <div className="divider"></div>
+              <p className="name-tag">Computer Science Enthusiast</p>
+
+              <div className="profile-icons">
+                <a href="https://www.instagram.com/sheep_01_09/" target="_blank" rel="noopener noreferrer">
+                  <img src={ins} alt="Instagram" className="social-icon" />
+                </a>
+                <a href="https://github.com/shshsheep" target="_blank" rel="noopener noreferrer">
+                  <img src={github} alt="GitHub" className="social-icon" />
+                </a>
+              </div>
+            </div>
+            
+            {/* 右邊內容 */}
+            <div className="intro">
+             <h1 className="text-black text-7xl font-black py-5">Hello</h1>
+             <p className="text-black text-xl font-bold py-2 pl-1">Jay — CS grad exploring AI.</p>
+
+             <div className="button-group">
+                <button className="button-style"><Link to="/resume">RESUME</Link></button>
+                <button className="button-style"><Link to="/projects">PROJECTS</Link></button>
+             </div>
+
+              <p className="text-black py-2">
+                A CS graduate from Southern Taiwan University of Science and Technology.
+             </p>
+              <p className="text-black py-2">
+               Positive, Driven, and Team-oriented, Turning challenges into opportunities.
+              </p>
+            </div>
         </div>
       </main>
 

@@ -1,10 +1,10 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import AboutApp from './aboutMe/App'
-import ResumeApp from './resume/App'
-import ProjectApp from './Project/App'
-import ContactApp from './Contact/App'
+import AboutApp from './aboutMe/aboutMe.jsx'
+import ResumeApp from './resume/resume.jsx'
+import ProjectApp from './Project/Project.jsx'
+import ContactApp from './Contact/Contact.jsx'
 import './index.css'
 
 createRoot(document.getElementById('root')).render(

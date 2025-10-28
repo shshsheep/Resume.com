@@ -1,0 +1,157 @@
+/* 重設：移除瀏覽器預設間距並確保 root 滿高 */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* 基本整體排版 */
+.about-page {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- 主題色變數：改這裡就能全站換色 --- */
+.about-page .site-main{
+  background: linear-gradient(to right, #e9caa1 40%, #f3f3f3 60%); /* main 主背景 */
+}
+
+/* ---------------------------
+   Main
+   --------------------------- */
+.about-page .site-main {
+  flex: 1; /* 撐滿中間區域，讓 footer 能貼到底部 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  position: relative;
+  left: calc(50% - 50vw);
+  box-sizing: border-box;
+}
+
+.about-page .main-inner {
+  max-height: 100vh;
+  width: 100%;
+  margin: 0 1rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ---------------------------
+   profile-card
+   --------------------------- */
+
+.profile-card, .intro {
+  height: 400px;
+}
+
+ .profile-card {
+  background-color: #e2be8eb7;
+  width: 300px;
+  text-align: center;
+  padding: 40px 20px;
+  padding-bottom: 80px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: #202225 0px 3px 7px;
+  position: relative;
+  overflow: visible;
+  z-index: 2;
+}
+
+.profile-card::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0px;                 /* 控制白條與卡片的間距（可調） */
+  width: calc(100% + 0px);      /* 延伸超出卡片兩側，形成「整個卡片下面」的白底 */
+  height: 50px;                  /* 白條高度 */
+  background: #ffffff;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  z-index: 1;                    /* 在卡片與 icon 之下 */
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 10%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.profile-icons {
+  display: flex;
+  gap: 15px;
+  font-size: 18px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 4px;
+  background: white;
+  padding: 8px 12px;
+  align-items: center;
+  z-index: 3;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #000000;
+}
+
+.name-tag {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 10px;
+  color: #000000;
+}
+
+.divider {
+  width: 40px;
+  border-bottom: 2px solid #64553d;
+  margin: 10px 0;
+}
+
+/* ---------------------------
+   intro
+   --------------------------- */
+
+.intro {
+  width: 450px;
+  padding: 0px 40px;
+}
+
+.button-group {
+  padding: 20px 0px;
+  display: flex;
+  gap: 20px;
+}
+
+.button-style {
+  padding: 5px 10px;
+  border: 2px solid #000000;
+  border-radius: 20px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.button-style:hover {
+  background-color: #3b82f6;
+  color: white;
+}
+
