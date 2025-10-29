@@ -1,41 +1,96 @@
-/* 重設：移除瀏覽器預設間距並確保 root 滿高 */
-html, body, #root {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-/* 基本整體排版 */
-.resume-page {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.resume-page .site-main{
+/* resume main background color change*/
+.resume-bg{
   background: #e9caa1;
 }
 
 /* ---------------------------
-   Main (還原樣式)
+   Main
    --------------------------- */
-.resume-page .site-main {
-  flex: 1; /* 撐滿中間區域，讓 footer 能貼到底部 */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem 0;
-  width: 100vw;
-  position: relative;
-  left: 0;
-  box-sizing: border-box;
-}
-
-
-.resume-page .main-inner {
-  max-width: 900px; /* 可以調整為 880px 以收窄 */
+.resume-main-inner {
+  max-width: 650px; /* 可以調整為 880px 以收窄 */
   width: 100%;
-  margin: 0 1rem;
-  background: #f17979;
+  margin: 0 auto;
   padding: 1rem;
   box-sizing: border-box;
+  position: static;
+
+  text-align: center;
+}
+
+.resume-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.resume-item {
+  width: 100%;
+  height: 270px;
+  padding: 0px 40px;
+  display: flex;
+  justify-content: space-between;
+  background: rgb(255, 255, 255);
+  box-shadow: #202225 0px 1px 4px;
+}
+
+.resume-item .exp-item-left,
+.resume-item .exp-item-right {
+  width: 45%;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 500;
+  padding-top: 50px;
+}
+
+.resume-item .edu-item-left,
+.resume-item .edu-item-right {
+  width: 45%;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 500;
+  padding-top: 50px;
+}
+
+.resume-skills-item {
+  width: 100%;
+  height: 350px;
+  padding: 0px 40px;
+  background: rgb(255, 255, 255);
+  box-shadow: #202225 0px 1px 4px;
+  margin-bottom: 30px;
+}
+
+.skills-item {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 兩欄 */
+  gap: 20px 10px; /* 行距與列距 */
+  list-style: none;
+  padding: 0;
+  margin: 0;  
+}
+
+.skills-item li{
+  display: flex;
+  align-items: center;
+}
+
+.PC-name {
+  font-size: 13px;
+}
+
+.title-dot {
+  width: 15px;
+  height: 15px;
+  background-color: rgba(75, 2, 75, 0.74); /* 大方塊 */
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+.dot {
+  flex: 0 0 auto;
+  width: 10px;
+  height: 10px;
+  background-color: rgba(75, 2, 75, 0.74); /* 小方塊 */
+  margin-right: 8px;
+  display: inline-block;
 }

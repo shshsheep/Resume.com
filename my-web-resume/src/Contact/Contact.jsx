@@ -5,7 +5,7 @@ import github from '../picture/github.png'
 
 export default function ContactApp() {
   return (
-    <div className="contact-page">
+    <div className="site-wrapper">
       <header className="site-header">
         <div className="header-inner flush">
           <h2 className="site-title">Jay Yang <span className="px-1.5 text-[0.95rem]">/ Computer Science Enthusiast</span> </h2>
@@ -21,8 +21,8 @@ export default function ContactApp() {
         </div>
       </header>
 
-      <main className="site-main">
-        <div className="main-inner">
+      <main className="site-main contact-bg">
+        <div className="contact-main-inner">
           <h2>Contact</h2>
           <p>這裡放你的聯絡資訊。</p>
         </div>

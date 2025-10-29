@@ -6,7 +6,7 @@ import duck from '../picture/duck.png'
 
 export default function AboutApp() {
   return (
-    <div className="about-page">
+    <div className="site-wrapper">
       <header className="site-header">
         <div className="header-inner flush">
           <h2 className="site-title">Jay Yang <span className="px-1.5 text-[0.95rem]">/ Computer Science Enthusiast</span> </h2>
@@ -22,8 +22,8 @@ export default function AboutApp() {
         </div>
       </header>
 
-      <main className="site-main">
-        <div className="main-inner">
+      <main className="site-main aboutMe-bg">
+        <div className="aboutMe-main-inner">
             {/* 左邊卡片 */}
             <div className="profile-card">  
 

@@ -5,7 +5,7 @@ import github from '../picture/github.png'
 
 export default function ProjectApp() {
   return (
-    <div className="project-page">
+    <div className="site-wrapper">
       <header className="site-header">
         <div className="header-inner flush">
           <h2 className="site-title">Jay Yang <span className="px-1.5 text-[0.95rem]">/ Computer Science Enthusiast</span> </h2>
@@ -21,8 +21,8 @@ export default function ProjectApp() {
         </div>
       </header>
 
-      <main className="site-main">
-        <div className="main-inner">
+      <main className="site-main project-bg">
+        <div className="project-main-inner">
           <h2>Project</h2>
           <p>在這裡放你的專案細節（Project 1 / Project 2 / Project 3）</p>
         </div>

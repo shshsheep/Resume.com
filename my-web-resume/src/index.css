@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+/* 全頁高度與 page wrapper：讓 footer 在內容不足時貼底 */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   
   background-color: #d6c2c2;
@@ -7,6 +15,17 @@
   --color-header: #202225; /* header 背景色 */
   --color-footer: #202225; /* footer 背景色 */
   --text-on-dark: #ffffff; /* header&footer 文字顏色 */
+}
+
+
+.site-wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
 }
 
 /* 固定頂/底部的輔助類別（選用） */
@@ -37,16 +56,15 @@
   background: var(--color-header) !important;
   color: var(--text-on-dark);
   padding: 1rem 0;
-  width: 100vw;
+  width: 100%;
   position: relative;
-  left: calc(50% - 50vw);
+  left: 0;
   box-sizing: border-box;
 }
 
-
 /* header-inner：標題靠左、導覽靠右；響應式內距 */
 .header-inner {
-  width: 100vw;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -54,7 +72,7 @@
   gap: 1rem;
   box-sizing: border-box;
   position: relative;
-  left: calc(50% - 50vw);
+  left: 0;
 }
 .header-inner.flush {
   padding: 0 clamp(0.5rem, 2vw, 1.25rem);
@@ -93,6 +111,21 @@
 }
 
 /* ---------------------------
+    Main
+   --------------------------- */
+/* main 填滿剩餘高度以推 footer 到底（內容多時會自然下移） */
+.site-main {
+  flex: 1 0 auto; /* 撐滿中間區域，讓 footer 能貼到底部 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  position: relative;
+  left: calc(50% - 50vw);
+  box-sizing: border-box;
+}
+
+/* ---------------------------
     Footer
    --------------------------- */
 .site-footer {
@@ -100,14 +133,14 @@
   color: var(--text-on-dark);
   padding: 0.75rem 0;
   border-top: 1px solid rgba(255,255,255,0.06);
-  width: 100vw;
+  width: 100%;
   position: relative;
-  left: calc(50% - 50vw);
+  left: 0;
   box-sizing: border-box;
 }
 
 .footer-inner {
-  width: 100vw;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -115,7 +148,7 @@
   gap: 1rem;
   box-sizing: border-box;
   position: relative;
-  left: calc(50% - 50vw);
+  left: 0;
   color: var(--text-on-dark);
 }
 

@@ -1,37 +1,16 @@
-/* 重設：移除瀏覽器預設間距並確保 root 滿高 */
-html, body, #root {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
-/* 基本整體排版 */
-.about-page {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-/* --- 主題色變數：改這裡就能全站換色 --- */
-.about-page .site-main{
-  background: linear-gradient(to right, #e9caa1 40%, #f3f3f3 60%); /* main 主背景 */
+/* 將原本的全域 selector 改為專屬且更具體，避免被其他樣式覆蓋 */
+.aboutMe-bg {
+  background: linear-gradient(to right, #e9caa1 40%, #f3f3f3 60%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* ---------------------------
    Main
    --------------------------- */
-.about-page .site-main {
-  flex: 1; /* 撐滿中間區域，讓 footer 能貼到底部 */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  position: relative;
-  left: calc(50% - 50vw);
-  box-sizing: border-box;
-}
-
-.about-page .main-inner {
+.aboutMe-main-inner {
   max-height: 100vh;
   width: 100%;
   margin: 0 1rem;
