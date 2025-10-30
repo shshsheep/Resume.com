@@ -23,8 +23,12 @@ export default function ContactApp() {
 
       <main className="site-main contact-bg">
         <div className="contact-main-inner">
-          <h2>Contact</h2>
-          <p>這裡放你的聯絡資訊。</p>
+
+          <h2 className="text-black text-[35px] font-black py-15"><span className='title-dot'></span> Contact</h2>
+
+          <div className="contact-card">
+            <h2>Contact</h2>
+          </div>
         </div>
       </main>
 
