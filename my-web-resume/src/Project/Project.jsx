@@ -23,8 +23,59 @@ export default function ProjectApp() {
 
       <main className="site-main project-bg">
         <div className="project-main-inner">
-          <h2>Project</h2>
-          <p>在這裡放你的專案細節（Project 1 / Project 2 / Project 3）</p>
+
+          <h2 className="text-black text-[35px] font-black py-15"><span className='title-dot'></span> Projects</h2>
+          <p className='pb-15 text-[14px] font-bold'>
+            Showcasing selected projects completed independently <br />
+            during my four years at university.
+          </p>
+
+          <ul className="project-list">
+
+            <li className="project-item">
+              <div className='pro-item-right'>
+              <h3 className="text-[20px] font-black text-left text-blue-500">"最速奧迪R8"</h3>
+              <p className="text-[14px] font-bold text-left pt-2 pb-7">Raspberry Pi Web-Controlled RC Car</p>
+              <p className="text-[13px] text-left pr-5">
+                Built a web-controlled RC car using Raspberry Pi, integrating hardware control with a simple web interface.
+              </p>
+              </div>
+              <div className='pro-item-left'>
+                <h5 className="pt-2 pb-2">__</h5>
+                <ul>
+                  <li className='pro-tech'><span className='dot'></span>Project Date: 2022</li>
+                  <li className='pro-tech'><span className='dot'></span>Role: Hardware Developer</li>
+                  <li className='pro-tech'><span className='dot'></span>Languages: Python, HTML, JavaScript</li>
+                  <li className='pro-tech'><span className='dot'></span>Framework / Libraries: Flask, RPi.GPIO</li>
+                  <li className='pro-tech'><span className='dot'></span>Hardware: Raspberry Pi</li>
+                </ul>
+              </div>
+            </li>
+
+            <li className="project-item">
+              <div className='pro-item-right'>
+              <h3 className="text-[20px] font-black text-left text-blue-500">YoBroAI</h3>
+              <p className="text-[14px] font-bold text-left pt-2 pb-7">Travel Planning Generator</p>
+              <p className="text-[13px] text-left pr-5">
+                Developed a local AI-based travel planning generator using Mistral‑7B, integrating backend logic with a React frontend to create personalized itineraries.
+              </p>
+              </div>
+              <div className='pro-item-left'>
+                <h5 className="pt-2 pb-2">__</h5>
+                <ul>
+                  <li className='pro-tech'><span className='dot'></span>Project Date: Nov 2024 – May 2025</li>
+                  <li className='pro-tech'><span className='dot'></span>Role: Backend Developer</li>
+                  <li className='pro-tech'><span className='dot'></span>Languages: Python, HTML, JavaScript</li>
+                  <li className='pro-tech'><span className='dot'></span>Frameworks: React, AutoGen, LangChain</li>
+                  <li className='pro-tech'><span className='dot'></span>Models: Mistral‑7B</li>
+                  <li className='pro-tech'><span className='dot'></span>Database / Tools: MySQL, LM Studio</li>
+                </ul>
+              </div>
+            </li>
+            {/* 新增(專案經歷) */}
+
+          </ul>
+
         </div>
       </main>
 

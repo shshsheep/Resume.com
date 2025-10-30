@@ -23,9 +23,8 @@ export default function ResumeApp() {
 
       <main className="site-main resume-bg">
           <div className="resume-main-inner">
-            <div className="">
 
-              <h2 className="text-black text-[35px] font-black py-15"><span className='title-dot'></span>Resume</h2>
+              <h2 className="text-black text-[35px] font-black py-15"><span className='title-dot'></span> Resume</h2>
 
               <ul className="resume-list">
 
@@ -63,14 +62,16 @@ export default function ResumeApp() {
                 </li>
                 {/* 新增(教育背景) */}
 
+                <h3 className="pb-3"></h3>
+
                 <li className="resume-skills-item">
-                  <h3 className="text-black text-[20px] font-black text-left py-7">Professional Certificates</h3>
+                  <h3 className="text-black text-[20px] font-black text-left pt-7 pb-5">Professional Certificates</h3>
                   <ul className='skills-item'>
-                    <li className='PC-name'><span className='dot'></span>Industrial Electronics Technician, Class C</li>
+                    <li className='text-[13px]'><span className='dot'></span>Industrial Electronics Technician, Class C</li>
                     <li className='PC-name'><span className='dot'></span>Computer Hardware Technician, Class C</li>
                     <li className='PC-name'><span className='dot'></span>OCP Java SE 11 Developer</li>
                   </ul>
-                  <h3 className="text-black text-[20px] font-black text-left py-7">Competition Certificates</h3>
+                  <h3 className="text-black text-[20px] font-black text-left pt-7 pb-5">Competition Certificates</h3>
                   <ul className='skills-item'>
                     <li className='PC-name'><span className='dot'></span>2019 – Electric Vehicle Creative Competition, Honorable Mention</li>
                     <li className='PC-name'><span className='dot'></span>2019 – E-sports Practical Training Camp, 3rd Place</li>
@@ -81,7 +82,6 @@ export default function ResumeApp() {
                 
               </ul>
 
-            </div>
           </div>
       </main>
 
