@@ -117,8 +117,6 @@ html, body, #root {
 .site-main {
   flex: 1 0 auto; /* 撐滿中間區域，讓 footer 能貼到底部 */
   display: flex;
-  align-items: center;
-  justify-content: center;
   width: 100vw;
   position: relative;
   left: calc(50% - 50vw);

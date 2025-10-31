@@ -15,24 +15,21 @@
   box-sizing: border-box;
   position: static;
 
-  text-align: center;
-
 }
 
 .contact-card {
   background-color: #ffffff;
   width: 100%;
-  text-align: center;
-  padding: 40px 20px;
-  padding-bottom: 80px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 40px 40px;
+  padding-bottom: 20px;
+  align-items: flex-start;
   border-radius: 20px;
   box-shadow: #202225 0px 3px 7px;
   position: relative;
   overflow: visible;
   z-index: 2;
+
+  margin-bottom: 50px;
 }
 
 .form-name{
@@ -49,10 +46,14 @@
 
 .form-full-line{
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
 }
 
 label{
-  font-size: 14px;
+  font-size: 15px;
+  font-weight: bold;
   margin-bottom: 6px;
 }
 
@@ -72,13 +73,13 @@ textarea {
 /* Button */
 .button-send {
   margin-top: 10px;
-  padding: 10px 25px;
+  padding: 5px 25px;
   border: none;
-  background: #0066ff;
+  background: rgba(75, 2, 75, 0.74);
   color: white;
   border-radius: 20px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 15px;
 }
 .button-send:hover {
   opacity: 0.9;

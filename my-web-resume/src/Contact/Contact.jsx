@@ -24,7 +24,7 @@ export default function ContactApp() {
       <main className="site-main contact-bg">
         <div className="contact-main-inner">
 
-          <h2 className="text-black text-[35px] font-black py-15"><span className='title-dot'></span> Contact</h2>
+          <h2 className="text-black text-[35px] font-black py-15 text-center"><span className='title-dot'></span> Contact</h2>
 
           <div className="contact-card">
             <form action="">

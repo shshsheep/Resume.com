@@ -10,7 +10,7 @@
 .project-main-inner {
   max-width: 670px; /* 可以調整為 880px 以收窄 */
   width: 100%;
-  margin: 0 1rem;
+  margin: 0 auto;
   padding: 1rem;
   box-sizing: border-box;
   position: static;
