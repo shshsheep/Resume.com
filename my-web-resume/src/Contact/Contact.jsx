@@ -55,7 +55,7 @@ export default function ContactApp() {
                 <textarea rows="3"></textarea>
               </div>
 
-                <button className='botton-send' type="submit">Send</button>
+                <button className='button-send' type="submit">Send</button>
             </form>
           </div>
 
