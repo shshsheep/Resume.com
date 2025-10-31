@@ -27,8 +27,38 @@ export default function ContactApp() {
           <h2 className="text-black text-[35px] font-black py-15"><span className='title-dot'></span> Contact</h2>
 
           <div className="contact-card">
-            <h2>Contact</h2>
+            <form action="">
+
+              <div className="form-name">
+                <div className='form-name-input'>
+                  <label >First Name *</label>
+                  <input type="text" required />
+                </div>
+                <div className='form-name-input'>
+                  <label >Last Name *</label>
+                  <input type="text" required />
+                </div>
+              </div>
+
+              <div className="form-full-line">
+                <label >Email Address *</label>
+                <input type="email" required />
+              </div>
+
+              <div className="form-full-line">
+                <label >Subject </label>
+                <input type="text" />
+              </div>
+
+              <div className="form-full-line">
+                <label >Message </label>
+                <textarea rows="3"></textarea>
+              </div>
+
+                <button className='botton-send' type="submit">Send</button>
+            </form>
           </div>
+
         </div>
       </main>
 
