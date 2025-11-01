@@ -8,7 +8,7 @@ export default function ResumeApp() {
     <div className="site-wrapper">
       <header className="site-header">
         <div className="header-inner flush">
-          <h2 className="site-title">Jay Yang <span className="px-1.5 text-[0.95rem]">/ Computer Science Enthusiast</span> </h2>
+          <h2 className="site-title">shshsheep <span className="px-1.5 text-[0.95rem]">/ Computer Science Enthusiast</span> </h2>
 
           <nav className="site-nav" aria-label="Main navigation">
             <ul>

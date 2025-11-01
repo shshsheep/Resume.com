@@ -8,7 +8,7 @@ import ContactApp from './Contact/Contact.jsx'
 import './index.css'
 
 createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
+  <BrowserRouter basename='/Resume.com'>
     <Routes>
       <Route path="/" element={<Navigate to="/about" replace />} />
       <Route path="/about" element={<AboutApp />} />

@@ -9,7 +9,7 @@ export default function AboutApp() {
     <div className="site-wrapper">
       <header className="site-header">
         <div className="header-inner flush">
-          <h2 className="site-title">Jay Yang <span className="px-1.5 text-[0.95rem]">/ Computer Science Enthusiast</span> </h2>
+          <h2 className="site-title">shshsheep <span className="px-1.5 text-[0.95rem]">/ Computer Science Enthusiast</span> </h2>
                     
           <nav className="site-nav" aria-label="Main navigation">
             <ul>
@@ -29,7 +29,7 @@ export default function AboutApp() {
 
               <img src={duck} alt="Profile" className="profile-image" />
 
-              <h2 className="name">Jay Yang</h2>
+              <h2 className="name">shshsheep</h2>
               <div className="divider"></div>
               <p className="name-tag">Computer Science Enthusiast</p>
 
@@ -46,7 +46,7 @@ export default function AboutApp() {
             {/* 右邊內容 */}
             <div className="intro">
              <h1 className="text-black text-7xl font-black py-5">Hello</h1>
-             <p className="text-black text-xl font-bold py-2 pl-1">Jay — CS grad exploring AI.</p>
+             <p className="text-black text-xl font-bold py-2 pl-1">A CS grad exploring AI.</p>
 
              <div className="button-group">
                 <button className="button-style"><Link to="/resume">RESUME</Link></button>
