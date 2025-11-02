@@ -13,7 +13,7 @@ export default function ResumeApp() {
           <nav className="site-nav" aria-label="Main navigation">
             <ul>
               <li><Link to="/about">About Me</Link></li>
-              <li><Link to="/resume">Resume</Link></li>
+              <li className='text-red-600'><Link to="/resume">Resume</Link></li>
               <li><Link to="/projects">Projects</Link></li>
               <li><Link to="/contact">Contact</Link></li>
             </ul>

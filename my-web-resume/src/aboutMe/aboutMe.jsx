@@ -3,6 +3,7 @@ import './aboutMe.css'
 import ins from '../picture/instagram.png'
 import github from '../picture/github.png'
 import duck from '../picture/duck.png'
+import PageTransition from '../pagetransition'
 
 export default function AboutApp() {
   return (
@@ -13,7 +14,7 @@ export default function AboutApp() {
                     
           <nav className="site-nav" aria-label="Main navigation">
             <ul>
-              <li><Link to="/about">About Me</Link></li>
+              <li className='text-red-600'><Link to="/about">About Me</Link></li>
               <li><Link to="/resume">Resume</Link></li>
               <li><Link to="/projects">Projects</Link></li>
               <li><Link to="/contact">Contact</Link></li>

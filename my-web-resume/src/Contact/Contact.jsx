@@ -1,9 +1,59 @@
+import React, { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './contact.css'
 import ins from '../picture/instagram.png'
 import github from '../picture/github.png'
+import emailJs from 'emailjs-com'
+
+// Service ID:service_tldoeor
+// Template ID:template_1o45cvq
+// public key: qkiucFGMR3Dq8pz0q
+
+const ServiceID = 'service_tldoeor';
+const TemplateID = 'template_1o45cvq';
+const PublicKey = 'qkiucFGMR3Dq8pz0q';
 
 export default function ContactApp() {
+  const [form,setform] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setform({
+      ...form,
+      [name]: value
+    });
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const fullname = `${form.firstName} ${form.lastName}`;
+
+    emailJs.send(
+      ServiceID,
+      TemplateID,
+      {
+        name: fullname,
+        email: form.email,
+        Subject: form.subject,
+        message: form.message
+      }, 
+      PublicKey
+    )
+    .then((result) => {
+    alert("Email sent successfully!");
+    })
+    .catch((error) => {
+    alert("Failed to send email: " + error.text);
+    });
+  }
+
   return (
     <div className="site-wrapper">
       <header className="site-header">
@@ -15,7 +65,7 @@ export default function ContactApp() {
               <li><Link to="/about">About Me</Link></li>
               <li><Link to="/resume">Resume</Link></li>
               <li><Link to="/projects">Projects</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
+              <li className='text-red-600'><Link to="/contact">Contact</Link></li>
             </ul>
           </nav>
         </div>
@@ -27,35 +77,35 @@ export default function ContactApp() {
           <h2 className="text-black text-[35px] font-black py-15 text-center"><span className='title-dot'></span> Contact</h2>
 
           <div className="contact-card">
-            <form action="">
+            <form onSubmit ={handleSubmit}>
 
               <div className="form-name">
                 <div className='form-name-input'>
                   <label >First Name *</label>
-                  <input type="text" required />
+                  <input type="text" name='firstName' value={form.firstName} onChange={handleChange} required />
                 </div>
                 <div className='form-name-input'>
                   <label >Last Name *</label>
-                  <input type="text" required />
+                  <input type="text" name='lastName' value={form.lastName} onChange={handleChange} required />
                 </div>
               </div>
 
               <div className="form-full-line">
                 <label >Email Address *</label>
-                <input type="email" required />
+                <input type="email" name='email' value={form.email} onChange={handleChange} required />
               </div>
 
               <div className="form-full-line">
                 <label >Subject </label>
-                <input type="text" />
+                <input type="text" name='subject' value={form.subject} onChange={handleChange}/>
               </div>
 
               <div className="form-full-line">
                 <label >Message </label>
-                <textarea rows="3"></textarea>
+                <textarea rows="3" name='message' value={form.message} onChange={handleChange}></textarea>
               </div>
 
-                <button className='button-send' type="submit">Send</button>
+                <button className='button-send' type="submit">Submit</button>
             </form>
           </div>
 

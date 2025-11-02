@@ -6,6 +6,11 @@ html, body, #root {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto', 'Noto Sans TC', sans-serif;
+}
+
+html {
+  overflow-y: scroll; /* 避免因頁面長短導致寬度跳動 */
 }
 
 :root {
