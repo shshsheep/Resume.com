@@ -3,6 +3,23 @@
   background: #e9caa1;
 }
 
+/* ---------------------
+   響應式：窄螢幕調整
+   --------------------- */
+@media screen and (max-width: 768px) {
+  .resume-item {
+    flex-wrap: wrap;            /* 左右換行 */
+  }
+
+  .resume-item .exp-item-left,
+  .resume-item .exp-item-right,
+  .resume-item .edu-item-left,
+  .resume-item .edu-item-right {
+    width: 100%;                /* 左右變單欄 */
+    margin-bottom: 15px;        /* 加間距 */
+  }
+}
+
 /* ---------------------------
    Main
    --------------------------- */
@@ -25,23 +42,18 @@
 
 .resume-item {
   width: 100%;
-  height: 270px;
+  min-height: 270px;
   padding: 0px 40px;
   display: flex;
   justify-content: space-between;
   background: rgb(255, 255, 255);
   box-shadow: #202225 0px 1px 4px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
 }
 
 .resume-item .exp-item-left,
-.resume-item .exp-item-right {
-  width: 45%;
-  text-align: left;
-  font-size: 18px;
-  font-weight: 500;
-  padding-top: 50px;
-}
-
+.resume-item .exp-item-right,
 .resume-item .edu-item-left,
 .resume-item .edu-item-right {
   width: 45%;
@@ -53,7 +65,7 @@
 
 .resume-skills-item {
   width: 100%;
-  height: 350px;
+  min-height: 350px;
   padding: 0px 40px;
   background: rgb(255, 255, 255);
   box-shadow: #202225 0px 1px 4px;

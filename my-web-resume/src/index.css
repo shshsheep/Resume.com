@@ -3,6 +3,7 @@
 /* 全頁高度與 page wrapper：讓 footer 在內容不足時貼底 */
 html, body, #root {
   height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -11,6 +12,7 @@ html, body, #root {
 
 html {
   overflow-y: scroll; /* 避免因頁面長短導致寬度跳動 */
+  overflow-x: hidden;
 }
 
 :root {
@@ -22,15 +24,113 @@ html {
   --text-on-dark: #ffffff; /* header&footer 文字顏色 */
 }
 
+img{
+  max-width: 100%;
+  height: auto;
+}
+
 
 .site-wrapper {
-  min-height: 100%;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  margin: 0 auto;
   box-sizing: border-box;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.hamburger {
+  display: none;
+}
+
+@media(max-width: 768px){
+  .desktop-nav{
+    display: none;
+  }
+
+  .hamburger{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  .hamburger span{
+    width: 25px;
+    height: 3px;
+    background: rgb(255, 255, 255);
+    border-radius: 3px;
+  }
+
+  .mobile-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 40%;
+    background: #eeb162;
+    box-shadow: -5px 0px 12px rgba(0,0,0,0.15);
+    z-index: 999;
+    padding-top: 4rem;
+  }
+
+  .mobile-nav ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .mobile-nav li {
+    padding: 1.2rem;
+    border-bottom: 1px solid #ffffff;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .mobile-nav a {
+    text-decoration: none;
+    color: #000000;
+  }
+
+  .site-main {
+    padding: 1rem 0;
+  }
+
+  .site-header {
+    padding: 0.8rem 0;
+  }
+
+  .site-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+  
+  .site-title {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  
+  .contact-card,
+  .project-card,
+  .resume-content,
+  .about-content {
+    width: 100%;
+    padding: 1.2rem;
+  }
+
+  .site-wrapper, 
+  .site-header, 
+  .site-main, 
+  .site-footer {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
 }
 
 /* 固定頂/底部的輔助類別（選用） */

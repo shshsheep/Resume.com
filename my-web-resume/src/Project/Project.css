@@ -3,6 +3,21 @@
   background: #e9caa1;
 }
 
+/* ---------------------
+   響應式：窄螢幕自動換行
+   --------------------- */
+@media screen and (max-width: 768px) {
+  .project-item {
+    flex-wrap: wrap;             /* 左右換行 */
+  }
+
+  .project-item .pro-item-left,
+  .project-item .pro-item-right {
+    width: 100%;                 /* 單欄顯示 */
+    margin-bottom: 15px;         /* 上下間距 */
+  }
+}
+
 /* ---------------------------
    Main (還原樣式)
    --------------------------- */
@@ -26,13 +41,15 @@
 
 .project-item {
   width: 100%;
-  height: 270px;
+  min-height: 270px;
   padding: 0px 20px 0px 40px;
   display: flex;
   justify-content: space-between;
   background: rgb(255, 255, 255);
   box-shadow: #202225 0px 1px 4px;
   margin-bottom: 50px;
+  box-sizing: border-box;
+  flex-wrap: nowrap;
 }
 
 .project-item .pro-item-left,

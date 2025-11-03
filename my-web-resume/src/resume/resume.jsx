@@ -1,16 +1,42 @@
 import { Link } from 'react-router-dom'
+import { useRef, useState, useEffect }  from 'react'
+import {motion, AnimatePresence} from "framer-motion"
 import './resume.css'
 import ins from '../picture/instagram.png'
 import github from '../picture/github.png'
 
 export default function ResumeApp() {
+
+  const [menuOpen, setMenuOpen] = useState(false)
+  const menuRef = useRef(null)
+  const buttonRef = useRef(null)
+
+  useEffect(() => {
+      const handleClickOutside = (event) => {
+        if (menuOpen){
+            if(
+            menuRef.current &&
+            buttonRef.current &&
+            !menuRef.current.contains(event.target) &&
+            !buttonRef.current.contains(event.target)
+          ) {
+            setMenuOpen(false);
+          }
+        }
+      };
+  
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, [menuOpen]);
+  
+
   return (
     <div className="site-wrapper">
       <header className="site-header">
         <div className="header-inner flush">
           <h2 className="site-title">shshsheep <span className="px-1.5 text-[0.95rem]">/ Computer Science Enthusiast</span> </h2>
 
-          <nav className="site-nav" aria-label="Main navigation">
+          <nav className="site-nav desktop-nav" aria-label="Main navigation">
             <ul>
               <li><Link to="/about">About Me</Link></li>
               <li className='text-red-600'><Link to="/resume">Resume</Link></li>
@@ -18,7 +44,33 @@ export default function ResumeApp() {
               <li><Link to="/contact">Contact</Link></li>
             </ul>
           </nav>
-        </div>
+
+          {/* Hamburger Button */}
+            <div ref={buttonRef} className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+  
+          {/* Mobile Nav */}
+          <AnimatePresence>
+            {menuOpen && (
+              <motion.nav
+                ref={menuRef} 
+                className="mobile-nav"
+                initial={{ x: "100%" }}
+                animate={{ x: 0 }}
+                exit={{ x: "100%" }}
+                transition={{ duration: 0.3 }}
+              >
+                <ul>
+                  <li onClick={() => setMenuOpen(false)}><Link to="/about">About Me</Link></li>
+                  <li onClick={() => setMenuOpen(false)}><Link to="/resume">Resume</Link></li>
+                  <li onClick={() => setMenuOpen(false)}><Link to="/projects">Projects</Link></li>
+                  <li onClick={() => setMenuOpen(false)}><Link to="/contact">Contact</Link></li>
+                </ul>
+              </motion.nav>
+            )}
+          </AnimatePresence>
       </header>
 
       <main className="site-main resume-bg">
