@@ -2,7 +2,7 @@
 
 A modern and responsive personal resume website built with **React + Vite**, showcasing my projects, skills, and experience.
 
-🌐 **Live Demo:** (Add your GitHub Pages / Vercel link here)  
+🌐 **Live Demo:** (https://shshsheep.github.io/Resume.com)  
 📁 **Repository:** This repo contains the full source code of my personal portfolio.
 
 ---
