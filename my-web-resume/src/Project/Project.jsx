@@ -119,8 +119,8 @@ export default function ProjectApp() {
                   <li className='pro-tech'><span className='dot'></span>Role: Backend Developer</li>
                   <li className='pro-tech'><span className='dot'></span>Languages: Python, HTML, JavaScript</li>
                   <li className='pro-tech'><span className='dot'></span>Frameworks: React, AutoGen, LangChain</li>
-                  <li className='pro-tech'><span className='dot'></span>Models: Mistral‑7B</li>
-                  <li className='pro-tech'><span className='dot'></span>Database / Tools: MySQL, LM Studio</li>
+                  <li className='pro-tech'><span className='dot'></span>Models: Qwen3-VL</li>
+                  <li className='pro-tech'><span className='dot'></span>Database / Tools: SQL Server, LM Studio</li>
                 </ul>
               </div>
             </li>
